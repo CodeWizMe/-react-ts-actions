@@ -1,32 +1,61 @@
+#on:
+#  push:
+#    # Sequence of patterns matched against refs/tags
+#    branches:
+#      - main
+#    tags:
+#      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+#
+#name: Create Release
+#
+#jobs:
+#  build:
+#    name: Create Release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v2
+#      - name: Create Release
+#        id: create_release
+#        uses: actions/create-release@v1
+#        env:
+#          # This token is provided by Actions, you do not need to create your own token
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          tag_name: v${{ github.run_number }}
+#          release_name: v${{ github.run_number }}@v${{ github.run_number }}
+#          body: |
+#            Changes in this Release
+#            - First Change
+#            - Second Change
+#          draft: false
+#          prerelease: true
+
+name: "pre-release"
+
 on:
   push:
-    # Sequence of patterns matched against refs/tags
     branches:
-      - main
-    tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-
-name: Create Release
+      - "main"
 
 jobs:
-  build:
-    name: Create Release
-    runs-on: ubuntu-latest
+  pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          # This token is provided by Actions, you do not need to create your own token
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # ...
+      - name: "Build & test"
+        run: |
+          echo "done!"
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          tag_name: v${{ github.run_number }}
-          release_name: Release V${{ github.ref }}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
-          draft: false
+          # This token is provided by Actions, you do not need to create your own token
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
           prerelease: true
+          title: "Development Build"
+          files: |
+            LICENSE
+            *.jar
