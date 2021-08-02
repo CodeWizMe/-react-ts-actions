@@ -1,6 +1,6 @@
 name: Actions Release
 on:
-  pull_request:
+  push:
     branches:
       - main
 
