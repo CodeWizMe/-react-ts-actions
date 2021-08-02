@@ -1,5 +1,4 @@
 name: Actions Release
-
 on:
   pull_request:
     branches:
