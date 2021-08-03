@@ -33,29 +33,44 @@
 
 name: "pre-release"
 
+#on:
+#  push:
+#    branches:
+#      - "main"
+#
+#jobs:
+#  pre-release:
+#    name: "Pre Release"
+#    runs-on: "ubuntu-latest"
+#
+#    steps:
+#      # ...
+#      - name: "Build & test"
+#        run: |
+#          echo "done!"
+#
+#      - uses: "marvinpinto/action-automatic-releases@latest"
+#        with:
+#          # This token is provided by Actions, you do not need to create your own token
+#          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+#          automatic_release_tag: "latest"
+#          prerelease: true
+#          title: "Development Build"
+#          files: |
+#            LICENSE
+#            *.jar
+
 on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
   push:
     branches:
-      - "main"
-
-jobs:
-  pre-release:
-    name: "Pre Release"
-    runs-on: "ubuntu-latest"
-
-    steps:
-      # ...
-      - name: "Build & test"
-        run: |
-          echo "done!"
-
-      - uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          # This token is provided by Actions, you do not need to create your own token
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Development Build"
-          files: |
-            LICENSE
-            *.jar
+      - main
+  pull_request:
+    branches:
+      - main
+  # Also trigger on page_build, as well as release created events
+#  page_build:
+  release:
+    types: # This configuration does not affect the page_build event above
+      - created
