@@ -1,7 +1,7 @@
 name: Releases
 
 on:
-  push:
+  pull_request:
     tags:
       - '*'
 
@@ -15,5 +15,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }} # (Required!) The GitHub token
 #          artifacts: "release.tar.gz,foo/*.txt"
-          bodyFile: "READ.md"
+          bodyFile: "README.md"
 
