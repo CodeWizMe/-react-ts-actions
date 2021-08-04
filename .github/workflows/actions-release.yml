@@ -1,9 +1,12 @@
 name: Releases
 
 on:
-  pull_request:
-    tags:
-      - '*'
+  push:
+    branches:
+      - main
+#  pull_request:
+#    tags:
+#      - '*'
 
 jobs:
 
