@@ -23,7 +23,7 @@
   },
   "scripts": {
     "git:pushntag": "git push && git push --tags",
-    "git:commit": "git commit package.json -m 'version bump' ",
+    "git:commit": "git commit package.json",
     "prerelease": "npm -no-git-tag-version version --preid=rc prerelease",
     "patch": "npm -no-git-tag-version version patch && npm run git:commit && npm run git:pushntag",
     "minor": "npm -no-git-tag-version version minor",
