@@ -23,9 +23,8 @@
   },
   "scripts": {
     "git:pushntag": "git push && git push --tags",
-    "git:commit": "git commit package.json -m \"version bump\" ",
     "prerelease": "npm -no-git-tag-version version --preid=rc prerelease",
-    "patch": "npm version patch -m \"version bump\" && npm run git:pushntag",
+    "patch": "npm version patch -m \"version bump to %s\" && npm run git:pushntag",
     "minor": "npm -no-git-tag-version version minor",
     "start": "react-scripts start",
     "build": "react-scripts build",
