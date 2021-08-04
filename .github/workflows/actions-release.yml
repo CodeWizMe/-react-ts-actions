@@ -17,7 +17,7 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }} # (Required!) The GitHub token
-#          tag: ${{ github.ref }}
+          tag: "v0.3.0"
 #          artifacts: "release.tar.gz,foo/*.txt"
           bodyFile: "README.md"
 
