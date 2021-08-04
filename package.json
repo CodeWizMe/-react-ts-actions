@@ -1,6 +1,6 @@
 {
   "name": "react-ts-actions",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
@@ -22,8 +22,10 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "git:pushntag": "git push && git push --tags",
+    "git:addncommit": "",
     "prerelease": "npm -no-git-tag-version version --preid=rc prerelease",
-    "patch": "npm -no-git-tag-version version patch",
+    "patch": "npm -no-git-tag-version version patch && npm run git:pushntag",
     "minor": "npm -no-git-tag-version version minor",
     "start": "react-scripts start",
     "build": "react-scripts build",
