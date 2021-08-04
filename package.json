@@ -1,6 +1,6 @@
 {
-  "name": "react-ts-mui-app",
-  "version": "0.1.0",
+  "name": "react-ts-actions",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
@@ -22,6 +22,9 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "prerelease": "npm -no-git-tag-version version --preid=rc prerelease",
+    "patch": "npm -no-git-tag-version version patch",
+    "minor": "npm -no-git-tag-version version minor",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
