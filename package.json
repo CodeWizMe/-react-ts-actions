@@ -22,7 +22,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "git:pushntag": "git push && git push --tags",
+    "git:pushntag": "git push && git push main %npm_package_version%",
     "prerelease": "npm -no-git-tag-version version --preid=rc prerelease",
     "patch": "npm version patch -m \"version bump to %s\" ",
     "minor": "npm -no-git-tag-version version minor",
