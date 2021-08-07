@@ -24,6 +24,9 @@
   "scripts": {
     "git:pushntag": "git push && git push main %npm_package_version%",
     "prerelease": "npm -no-git-tag-version version --preid=rc prerelease",
+    "git:commit": "git commit -m \"commit\" ",
+    "git:push": "git push",
+    "git:tag": "git push main %npm_package_version%",
     "patch": "npm version patch -m \"version bump to %s\" ",
     "minor": "npm -no-git-tag-version version minor",
     "start": "react-scripts start",
