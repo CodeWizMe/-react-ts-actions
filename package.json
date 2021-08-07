@@ -27,7 +27,7 @@
     "git:tag": "git tag -a v%npm_package_version% -m \"Version %npm_package_version%\" ",
     "git:push:tag": "git push origin v%npm_package_version% ",
     "patch": "npm version patch -m \"version bump to %s\" ",
-    "patch:push": "npm version patch -m \"version bump to %s\" && npm run git:push && npm run git:tag && npm run git:push:tag",
+    "patch:push": "npm version patch -m \"version bump to %s\" && npm run git:push && npm run git:push:tag",
     "minor": "npm -no-git-tag-version version minor",
     "start": "react-scripts start",
     "build": "react-scripts build",
