@@ -1,6 +1,6 @@
 {
   "name": "react-ts-actions",
-  "version": "0.4.13",
+  "version": "0.4.14",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
