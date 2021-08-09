@@ -1,15 +1,21 @@
 name: GitHub Actions Demo
 
-#on:
+on:
+
 #  pull_request:
 #    branches:
 #      - main
 #    tags:
 #      - v*
-on:
-  release:
+
+#  release:
+#    types:
+#      - created
+
+  workflow_run:
+    workflows: ["Create a Release"]
     types:
-      - created
+      - completed
 
 jobs:
   Explore-GitHub-Actions:
