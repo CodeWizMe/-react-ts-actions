@@ -1,14 +1,15 @@
 name: GitHub Actions Demo
-on:
+
+#on:
 #  pull_request:
 #    branches:
 #      - main
 #    tags:
 #      - v*
-
+on:
   release:
     types:
-      - published
+      - created
 
 jobs:
   Explore-GitHub-Actions:
