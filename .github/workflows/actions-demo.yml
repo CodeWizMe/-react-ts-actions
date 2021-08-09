@@ -5,10 +5,10 @@ on:
 #      - main
 #    tags:
 #      - v*
-on:
+
   release:
     types:
-      - created
+      - published
 
 jobs:
   Explore-GitHub-Actions:
